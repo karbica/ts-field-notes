@@ -7,7 +7,7 @@
  * @param array - The array to be sorted.
  * @returns The array sorted as ascended.
  */
-export default function mergeSort(array: number[]) {
+export default function mergeSort(array: number[]): number[] {
     if (array.length < 2) {
         return array;
     }

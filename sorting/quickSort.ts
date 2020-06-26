@@ -6,7 +6,7 @@
  * @param array - The array to be sorted.
  * @return The array sorted as ascended.
  */
-export default function quickSort(array: number[]) {
+export default function quickSort(array: number[]): number[] {
     if (array.length < 2) {
         return array;
     }

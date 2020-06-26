@@ -6,7 +6,7 @@
  * @param array - The array to be sorted.
  * @returns The array sorted as ascended.
  */
-export default function bubbleSort(array: number[]) {
+export default function bubbleSort(array: number[]): number[] {
     let swapped = false;
 
     do {

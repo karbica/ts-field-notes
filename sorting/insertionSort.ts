@@ -5,7 +5,7 @@
  * @param array - The array to be sorted.
  * @returns The array sorted as ascended.
  */
-export default function insertionSort(array: number[]) {
+export default function insertionSort(array: number[]): number[] {
     let i: number, j: number;
 
     for (i = 1; i < array.length; i++) {
