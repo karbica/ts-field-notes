@@ -3,7 +3,7 @@
  * until two elements of the internal arrays can be swapped. It
  * is then rebuilt again into a sorted array. This implementation
  * returns a new array.
- * 
+ *
  * @param array - The array to be sorted.
  * @returns The array sorted as ascended.
  */

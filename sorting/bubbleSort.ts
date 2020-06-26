@@ -1,12 +1,14 @@
 /**
  * A Bubble Sort implementation swaps elements until there are
- * no more swaps needed, resulting in a sorted array.
- * 
- * @param - The array to be sorted.
- * @returns The array sorted ascended.
+ * no more swaps needed, resulting in a sorted array. This sorts
+ * the array in place.
+ *
+ * @param array - The array to be sorted.
+ * @returns The array sorted as ascended.
  */
 export default function bubbleSort(array: number[]) {
     let swapped = false;
+
     do {
         swapped = false;
         array.forEach((element: number, index: number) => {
@@ -18,5 +20,6 @@ export default function bubbleSort(array: number[]) {
             }
         });
     } while (swapped);
+
     return array;
 }
