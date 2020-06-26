@@ -2,5 +2,16 @@
   "name": "ts-data-structures",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "tape -r ts-node/register **/*.test.ts",
+    "test:watch": "ts-node-dev --respawn --no-notify --watch **/*.ts ./node_modules/.bin/tape **/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.13.0",
+    "tape": "^5.0.1",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5"
+  }
 }
