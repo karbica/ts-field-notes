@@ -1,17 +1,50 @@
+import Queue from './queue';
+
 /**
  * A Binary Tree data structure stores data in a hierarchical form.
  * Each node has a left and right pointer to another node. A tree
- * must start with a root node.
+ * must start with a root node. This implementation does not balance
+ * itself and it does not have a compare function. This binary tree
+ * implementation simply connects Nodes to left and right pointers.
  *
  * @param node - The root node to instantiate the Binary Tree.
  * @returns An instance of a Binary Tree.
  */
-export default class Tree<T> {
+export default class BinaryTree<T> {
     root: Node<T>;
+
+    static from<T>(values: T[]): BinaryTree<T> {
+        const [head, ...tail] = values;
+        const btree = new BinaryTree<T>(head);
+        tail.forEach((value: T) => btree.insert(value));
+        return btree;
+    }
 
     constructor(value: T) {
         const root = new Node<T>(value);
         this.root = root;
+    }
+
+    insert(value: T): Node<T> {
+        const queue = new Queue<Node<T>>();
+        queue.enqueue(this.root);
+        while (!queue.isEmpty()) {
+            const node = queue.dequeue();
+            if (node.left) {
+                queue.enqueue(node.left);
+            } else {
+                const left = new Node<T>(value);
+                node.left = left;
+                return left;
+            }
+            if (node.right) {
+                queue.enqueue(node.right);
+            } else {
+                const right = new Node<T>(value);
+                node.right = right;
+                return right;
+            }
+        }
     }
 
     inOrder(fn: (node: Node<T>) => void, node: Node<T> = this.root): void {
