@@ -21,6 +21,11 @@ tape("Linked List Data Structure", (t) => {
         3,
         "should correctly find a node given a find function"
     );
+
+    // TODO A more correct way to test if the iteratee was called
+    // is through a spy. Instead we have to test if it was able to
+    // produce an array whereas we could have check if it was called
+    // n times.
     const forEachValues = [];
     ll.forEach((node) => forEachValues.push(node.value));
     t.same(forEachValues, values, "should correctly iterate over every node");
