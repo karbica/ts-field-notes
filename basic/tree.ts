@@ -4,7 +4,7 @@
  * have any amount of children. And a child can become a parent by
  * pointing to any amount children. A tree is required to have a
  * single node for instantiation.
- * 
+ *
  * @param item - The root value required to instantiate the tree.
  * @returns An instance of a tree.
  */
@@ -33,7 +33,7 @@ export default class Tree<T> {
  * A Node is the atomic unit of a tree. It can be a parent if
  * it has at least one child. It can also be a parent if it descends
  * from a parent.
- * 
+ *
  * @param item - The value to be stored in the node.
  * @returns An instance of a node.
  */
