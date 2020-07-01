@@ -1,8 +1,7 @@
-import test from "tape";
-import Queue from "../queue";
+import tape from '../../fixture';
+import Queue from '../queue';
 
-test("Queue Data Structure", (t) => {
-    t.plan(12);
+tape('Queue Data Structure', (t) => {
     const queue = new Queue<string>();
     queue.enqueue('a');
     queue.enqueue('b');
@@ -17,7 +16,7 @@ test("Queue Data Structure", (t) => {
     t.equal(queue.dequeue(), 'c', 'should dequeue correctly');
     t.true(queue.isEmpty(), 'should be empty after dequeue');
     t.equal(queue.length, 0, 'should have a length of zero');
-    t.equal(queue.dequeue(), null, 'should be null when dequeue while empty')
-    t.equal(queue.peek(), null, 'should be null when peek while empty')
+    t.equal(queue.dequeue(), null, 'should be null when dequeue while empty');
+    t.equal(queue.peek(), null, 'should be null when peek while empty');
     t.end();
 });

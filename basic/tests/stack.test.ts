@@ -1,8 +1,7 @@
-import tape from 'tape';
+import tape from '../../fixture';
 import Stack from '../stack';
 
 tape('Stack Data Structure', (t) => {
-    t.plan(12);
     const stack = new Stack<string>();
     stack.push('a');
     stack.push('b');
@@ -19,4 +18,5 @@ tape('Stack Data Structure', (t) => {
     t.equal(stack.length, 0, 'should have a length of zero');
     t.equal(stack.pop(), null, 'should be null when pop while empty');
     t.equal(stack.peek(), null, 'should be null when peek while empty');
+    t.end();
 });

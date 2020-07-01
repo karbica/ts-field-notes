@@ -1,4 +1,4 @@
-import tape from 'tape';
+import tape from '../../fixture';
 import binarySearch from '../binarySearch';
 
 tape('Binary Search', (t) => {

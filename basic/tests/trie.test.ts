@@ -1,4 +1,4 @@
-import tape from 'tape';
+import tape from '../../fixture';
 import Trie from '../trie';
 
 tape('Trie Data Structure', (t) => {
