@@ -17,15 +17,16 @@ export default class Tree<T> {
     }
 
     traverse(fn: (node: Node<T>) => void): void {
-        function walk(node: Node<T>): void {
+        function _traverse(node: Node<T>): void {
             fn(node);
             if (node.hasChildren()) {
                 node.children.forEach((child: Node<T>) => {
-                    walk(child);
+                    _traverse(child);
                 });
             }
         }
-        walk(this.root);
+
+        _traverse(this.root);
     }
 }
 
