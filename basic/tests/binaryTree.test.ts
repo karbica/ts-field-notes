@@ -45,5 +45,6 @@ tape('Binary Tree Data Structure', (t) => {
         ['h', 'i', 'd', 'e', 'b', 'f', 'g', 'c', 'a'],
         'should correctly traverse post-order'
     );
+    t.equal(btree.height, 4, 'should have correct height');
     t.end();
 });

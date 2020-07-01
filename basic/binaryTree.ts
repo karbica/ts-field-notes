@@ -70,6 +70,25 @@ export default class BinaryTree<T> {
             fn(node);
         }
     }
+
+    get height(): number {
+        function _height(node: Node<T>): number {
+            if (node === null) {
+                return 0;
+            } else {
+                const left = _height(node.left);
+                const right = _height(node.right);
+
+                if (left > right) {
+                    return left + 1;
+                } else {
+                    return right + 1;
+                }
+            }
+        }
+
+        return _height(this.root);
+    }
 }
 
 /**
