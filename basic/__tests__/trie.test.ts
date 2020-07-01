@@ -1,6 +1,5 @@
 import tape from 'tape';
 import Trie from '../trie';
-import util from 'util';
 
 tape('Trie Data Structure', (t) => {
     const words = ['bar', 'cart', 'car', 'cat', 'carts', 'ark', 'art', 'zulu'];
