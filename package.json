@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "tape -r ts-node/register **/*.test.ts",
-    "test:watch": "ts-node-dev --respawn --no-notify ./node_modules/.bin/tape **/*.test.ts"
+    "test:watch": "ts-node-dev --respawn --no-notify ./node_modules/.bin/tape **/*.test.ts",
+    "test:single": "ts-node-dev --respawn --no-notify ./node_modules/.bin/tape"
   },
   "devDependencies": {
     "@types/tape": "^4.13.0",
