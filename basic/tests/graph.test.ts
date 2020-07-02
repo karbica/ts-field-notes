@@ -32,6 +32,8 @@ tape('Graph Data Structure', (t) => {
         () => graph.addEdge(graph.getNode('b'), graph.getNode('c')),
         'should add edge between node `b` and node `c`'
     );
+    t.true(graph.getNode('a').hasNeighbors(), 'node `a` should have neighbors');
+    t.true(graph.getNode('b').hasNeighbors(), 'node `b` should have neighbors');
     t.equal(
         graph.getNode('a').neighbors.size,
         1,
