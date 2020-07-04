@@ -1,3 +1,5 @@
+import Queue from './queue';
+
 export default class Graph<T> {
     nodes: Map<string, Node<T>>;
     edges: [Node<T>, Node<T>][];
@@ -65,6 +67,25 @@ export default class Graph<T> {
 
         if (!this.directed) {
             b.addNeighbor(a);
+        }
+    }
+
+    // TODO Allow a DFS traversal method rather than just a BFS.
+    traverse(start: Node<T>, fn: (node: Node<T>) => void): void {
+        const visited = new Set<string>();
+        const queue = new Queue<Node<T>>();
+
+        queue.enqueue(start);
+
+        while (!queue.isEmpty()) {
+            const node = queue.dequeue();
+            fn(node);
+            visited.add(node.key);
+            for (const neighbor of node.neighbors.values()) {
+                if (!visited.has(neighbor.key)) {
+                    queue.enqueue(neighbor);
+                }
+            }
         }
     }
 }
