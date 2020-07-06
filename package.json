@@ -9,6 +9,7 @@
     "test:single": "ts-node-dev --respawn --no-notify ./node_modules/.bin/tape"
   },
   "devDependencies": {
+    "@types/sinon": "^9.0.4",
     "@types/tape": "^4.13.0",
     "sinon": "^9.0.2",
     "tap-spec": "^5.0.0",
