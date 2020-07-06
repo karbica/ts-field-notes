@@ -1,27 +1,43 @@
-/**
- * A Linked List data structure stores values with pointers to the
- * next value in the series. This class will expose common methods
- * implemented by an Array.
- * 
- * @returns An instance of a LinkedList.
- */
 export default class LinkedList<T> {
     length: number;
     head: Node<T> | null;
     tail: Node<T> | null;
 
+    /**
+     * Initializes a linked list from an array of values.
+     * 
+     * @param values - An array of values to initialize an instance.
+     * @returns An instance of a linked list.
+     */
     static from<T>(values: T[]): LinkedList<T> {
-        const ll = new LinkedList<T>();
-        values.forEach((node: T) => ll.push(node));
-        return ll;
+        const linkedList = new LinkedList<T>();
+
+        for (const value of values) {
+            linkedList.push(value);
+        }
+
+        return linkedList;
     }
 
+    /**
+     * A Linked List data structure stores values with pointers to the
+     * next value in the series. This class will expose common methods
+     * implemented by an Array.
+     * 
+     * @class
+     */
     constructor() {
         this.length = 0;
         this.head = null;
         this.tail = null;
     }
 
+    /**
+     * Appends a value to the end of the linked list.
+     * 
+     * @param value - A value to append.
+     * @returns The length of the linked list.
+     */
     push(value: T): number {
         const node = new Node<T>(value);
 
@@ -45,6 +61,12 @@ export default class LinkedList<T> {
         return this.length;
     }
 
+    /**
+     * Removes the node at the end of the linked list and returns
+     * that node.
+     * 
+     * @returns The node removed from the linked list.
+     */
     pop(): T {
         const node = this.tail;
         const penultimate = this.penultimate();
@@ -54,6 +76,11 @@ export default class LinkedList<T> {
         return node.value;
     }
 
+    /**
+     * Iterates over every value in the linked list and invokes the
+     * given function.
+     * @param fn - The callback function to invoke.
+     */
     forEach(fn: (node: Node<T>) => void): void {
         let cursor = this.head;
         while (cursor) {
@@ -62,8 +89,15 @@ export default class LinkedList<T> {
         }
     }
 
+    /**
+     * Finds a node in the linked list given the find function.
+     * 
+     * @param fn - The find function to invoke.
+     * @returns The callback function to determine the find decision.
+     */
     find(fn: (node: Node<T>) => boolean): Node<T> | null {
         let cursor = this.head;
+
         while (cursor) {
             if (fn(cursor)) {
                 return cursor;
@@ -71,9 +105,15 @@ export default class LinkedList<T> {
                 cursor = cursor.next;
             }
         }
+
         return null;
     }
 
+    /**
+     * Returns the node right before the tail.
+     * 
+     * @returns The penultimate node.
+     */
     penultimate(): Node<T> | null {
         if (this.length < 2) {
             return null;
@@ -90,16 +130,16 @@ export default class LinkedList<T> {
     }
 }
 
-/**
- * A Node within a Linked List contains a stored value and a pointer
- * to the next Node.
- * 
- * @returns An instance of a Node to be used in a Linked List.
- */
 export class Node<T> {
     value: T;
     next: Node<T> | null;
 
+    /**
+     * A node within a linked list contains a stored value and a
+     * pointer to the next node.
+     * 
+     * @class
+     */
     constructor(value: T) {
         this.value = value;
         this.next = null;
