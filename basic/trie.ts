@@ -79,6 +79,8 @@ export default class Trie {
         for (const letter of prefix) {
             if (cursor.children.has(letter)) {
                 cursor = cursor.children.get(letter);
+            } else {
+                return [];
             }
         }
 
