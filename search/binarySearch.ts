@@ -1,7 +1,9 @@
 /**
- * Searches a given array for a given element. 
+ * Searches a given array for a given element.
+ * 
  * @param arr - The array to be searched.
  * @param target - The element to search for.
+ * @returns The value that was searched for, if present,
  */
 export default function binarySearch(arr: number[], target: number): number {
     let low = 0;
