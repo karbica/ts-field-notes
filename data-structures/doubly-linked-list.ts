@@ -8,13 +8,13 @@ export default class DoublyLinkedList<T> {
      * @param values - An array of values to initialize the list.
      */
     static from<T>(values: T[]): DoublyLinkedList<T> {
-        const l = new DoublyLinkedList<T>();
+        const list = new DoublyLinkedList<T>();
 
         for (const value of values) {
-            l.push(value);
+            list.push(value);
         }
 
-        return l;
+        return list;
     }
 
     /**
