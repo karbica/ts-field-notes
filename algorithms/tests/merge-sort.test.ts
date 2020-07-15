@@ -1,5 +1,5 @@
 import tape from '../../fixture';
-import mergeSort from '../mergeSort';
+import mergeSort from '../merge-sort';
 
 tape('Merge Sort', (t) => {
     const input = [3, 10, 6, 2, 8, 6, 4, 3, 7, 3, 8, 9];

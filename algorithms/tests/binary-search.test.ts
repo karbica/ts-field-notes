@@ -1,5 +1,5 @@
 import tape from '../../fixture';
-import binarySearch from '../binarySearch';
+import binarySearch from '../binary-search';
 
 tape('Binary Search', (t) => {
     const arr = [...Array(100).keys()];

@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import tape from '../../fixture';
-import LinkedList from '../linkedList';
+import LinkedList from '../linked-list';
 
 tape('Linked List Data Structure', (t) => {
     const spy = sinon.spy();

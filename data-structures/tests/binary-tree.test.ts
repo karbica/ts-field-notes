@@ -1,6 +1,5 @@
 import tape from '../../fixture';
-import BinaryTree from '../binaryTree';
-import util from 'util';
+import BinaryTree from '../binary-tree';
 
 tape('Binary Tree Data Structure', (t) => {
     const binaryTree = new BinaryTree(10);

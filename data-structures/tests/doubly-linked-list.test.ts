@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import tape from '../../fixture';
-import DoublyLinkedList from '../doublyLinkedList';
+import DoublyLinkedList from '../doubly-linked-list';
 
 tape('Doubly Linked List', (t) => {
     const spy = sinon.spy();
