@@ -29,8 +29,9 @@ export default class BinaryTree {
 
         while (values.length) {
             const node = queue.dequeue();
+            if (!node) continue;
             // TODO Figure out a way to do this without modifying
-            // the source array.
+            // the source array, by copy or using a counter.
             const left = values.shift();
             const right = values.shift();
             if (left) node.left = new Node(left);
