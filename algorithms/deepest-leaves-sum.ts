@@ -10,14 +10,14 @@ export default function (root: Node): number {
     const queue = [root];
 
     while (queue.length) {
-        let depth = queue.length;
+        let count = queue.length;
         const level = [] as number[];
-        while (depth !== 0) {
+        while (count !== 0) {
             const node = queue.shift();
             level.push(node.value);
             if (node.left) queue.push(node.left);
             if (node.right) queue.push(node.right);
-            depth--;
+            count--;
         }
         levels.push(level);
     }
