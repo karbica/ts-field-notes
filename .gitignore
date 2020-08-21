@@ -1,4 +1,4 @@
 .DS_Store
 /node_modules
-# ignore tape error output logs
 report.*.json
+.idea/
