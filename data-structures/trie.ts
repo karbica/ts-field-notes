@@ -18,7 +18,7 @@ export default class Trie {
 
     /**
      * A Trie data structure creates paths of nodes out of the inserted
-     * words. The serial nature of a word allows for effecient searching
+     * words. The serial nature of a word allows for efficient searching
      * since the Trie only has to look for nodes within the given path.
      * @class
      */
