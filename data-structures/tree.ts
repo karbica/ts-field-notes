@@ -12,8 +12,7 @@ export default class Tree<T> {
     readonly root: Node<T>;
 
     constructor(item: T) {
-        const node = new Node<T>(item);
-        this.root = node;
+        this.root = new Node<T>(item);
     }
 
     traverse(fn: (node: Node<T>) => void): void {
